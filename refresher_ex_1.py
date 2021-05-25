@@ -1,5 +1,5 @@
 # Python refresher exercises
-# part 1 
+# part 1
 # May 25, 2020
 
 # - This set of exercises uses topics from refreshers 1 and 2: basic data types and flow control
@@ -19,38 +19,15 @@
 #  end breakpoints and move on to the next part. Here's an example:
 
 
-
 # part 0
 # This is just a simple example to demonstrate how the start and end
 # breakpoint system works
 # Task: create a variable with your name and print out Hello <name>
-print("start of part 0") # set breakpoint here
-# your code here
-
-
-print("end of 0") # set breakpoint here 
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("start of part 0")  # prints the indication of the start of the exercise
+name = input("What is your name?")  # asks the user for their name
+# concates the word Hello with line 28 which will combine Hello with the user's input name
+print("Hello " + name)
+print("end of 0")  # indicates the end of the exercise
 
 
 # solution 1
@@ -61,7 +38,7 @@ print("Hello", name)
 # Before we really start, a couple more things:
 # - your solution may be different or even better than what I showed
 # - Please get in the habit of documenting your code as you go along
-#   You don't need to state the obvious but you should point out anything 
+#   You don't need to state the obvious but you should point out anything
 #   that could be interesting later.
 # - After you've finished the code for a part (or even more often) you must
 #   perform a commit! You should also push your commit to the remote master (Push)
@@ -85,69 +62,50 @@ print("Hello", name)
 # on Canvas hand in:
 # - your version of this .py file
 # - your results.txt
-# - tell me the URL of your forked repo 
-
-
-
-
+# - tell me the URL of your forked repo
+'''
 
 
 # part 1
 # task:  L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
 # using both, indexing and slicing on L, assemble and print a new list N that contains:
-# [0,2,3,[5,6],8,10] 
+# [0,2,3,[5,6],8,10]
 # as an example, here's  how i've constructed a similar list X which contains [[2, 3], [10]] from L:
 #
 # L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
-# X = [ L[2][1:-1], L[-1][2] ] 
+# X = [ L[2][1:-1], L[-1][2] ]
 # print(X)  => [[2, 3], [10]]
-# You need to do something similar but end up with [0,2,3,[5,6],8,10] instead. One way to work 
+# You need to do something similar but end up with [0,2,3,[5,6],8,10] instead. One way to work
 # through this is to break the process down in small steps, store result of each step in a new variable
 # and use these variables to assemble the final result.
-print("start of part 1") # set breakpoint here
-L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
+print("start of part 1")  # set breakpoint here
+L = [0, [], [1, 2, 3, 4], [[5], [6, 7]], [8, 9, 10]]
 print(L)
 # your code
+index0 = L[0]  # 0 start of index
+index1 = L[2][1]  # index
+index2 = L[2][2]
+index3 = [L[3][0][0], L[3][1][0]]  # [5, 6]
+index4 = L[4][0]
+index5 = L[4][-1]
 
+insertL = [index0, index1, index2, index3, index4, index5]
+print("New list is ", insertL)
 
-print("end of 1") # set breakpoint here 
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("end of 1")
 
 
 # solution 2
-L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
+L = [0, [], [1, 2, 3, 4], [[5], [6, 7]], [8, 9, 10]]
 print("L is", L)
-tmp1 = L[0] # 0
-tmp2 = L[2][1] # 2
-tmp3 = L[2][2] # 3
-tmp4 = [L[3][0][0], L[3][1][0]] # [5, 6]
-tmp5 = L[4][0] # 8
-tmp6 = L[4][-1] # 10 
-newL = [tmp1, tmp2, tmp3, tmp4, tmp5, tmp6] # create final list
-print(newL) # [0, 2, 3, [5, 6], 8, 10]
+tmp1 = L[0]  # 0
+tmp2 = L[2][1]  # 2
+tmp3 = L[2][2]  # 3
+tmp4 = [L[3][0][0], L[3][1][0]]  # [5, 6]
+tmp5 = L[4][0]  # 8
+tmp6 = L[4][-1]  # 10
+newL = [tmp1, tmp2, tmp3, tmp4, tmp5, tmp6]  # create final list
+print(newL)  # [0, 2, 3, [5, 6], 8, 10]
 '''
 
 # part 2
@@ -161,32 +119,8 @@ print("start of part 2") # set breakpoint here
 s = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects."
 # your code here
 
-print("end of 2") # set breakpoint here 
+print("end of 2") # set breakpoint here
 '''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 s = "Python is an interpreted, high-level, general-purpose programming language."
@@ -198,7 +132,7 @@ for e in sentence_list:
 
 
 # part 3
-# Task: 
+# Task:
 # - break s into a list of words (i.e. now separated by space)
 # - print out the word list (with a loop) so that every 2. word is in full uppercase.
 # - optionally remove all periods and commas
@@ -210,90 +144,79 @@ for e in sentence_list:
 # high-level
 # GENERAL-PURPOSE
 # programming
-# LANGUAGE
-print("start of part 3") # set breakpoint here
-# your code here
-
-
-print("end of 3") # set breakpoint here 
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# LANGUAGE '''
+print("start of part 3")
+s = "Python is an interpreted, high-level, general-purpose programming language."
+sentence_list = s.split()  # splits each word at the start of a space
+uppercase = -1
+for i in sentence_list:
+    i = i.replace('.', '')  # will replace the period with an empty line
+    i = i.replace(',', '')  # will replace the comma with an empty line
+    if uppercase == 1:
+        print(i.upper())
+    else:
+        print(i)
+    uppercase = uppercase * -1
+print("end of 3")
 
 
 # solution 3
 # version 1 - using 1/-1
 s = "Python is an interpreted, high-level, general-purpose programming language."
 words = s.split()
-make_upper = -1  # we start with 1 for normal print-out, then flip -1 for uppercase, then back, etc.
+# we start with 1 for normal print-out, then flip -1 for uppercase, then back, etc.
+make_upper = -1
 for w in words:
-    w = w.replace('.', '') # replace . with empty list
-    w = w.replace(',', '') # replace , with empty list
+    w = w.replace('.', '')  # replace . with empty list
+    w = w.replace(',', '')  # replace , with empty list
     if make_upper == 1:
         print(w.upper())
     else:
         print(w)
-    make_upper *= -1 # flip from 1 to -1 or vice versa
+    make_upper *= -1  # flip from 1 to -1 or vice versa
 
 # version 2 - using a flag
 s = "Python is an interpreted, high-level, general-purpose programming language."
 words = s.split()
-make_upper = False  # we start with False for normal print-out, then flip to True for uppercase, then back, etc.
+# we start with False for normal print-out, then flip to True for uppercase, then back, etc.
+make_upper = False
 for w in words:
-    w = w.replace('.', '') # replace . with empty list
-    w = w.replace(',', '') # replace , with empty list
+    w = w.replace('.', '')  # replace . with empty list
+    w = w.replace(',', '')  # replace , with empty list
     if make_upper == True:
         print(w.upper())
-        make_upper = False # it's currently True, so set to False
+        make_upper = False  # it's currently True, so set to False
     else:
         print(w)
-        make_upper = True # it must currently be False, so set to True
+        make_upper = True  # it must currently be False, so set to True
 '''
 
 # part 4
 # task: abbreviate a potentially long string s to have only the x first and x last chars with ... in between.
 # for x = 5 this would be: "A very long description" => "A ver...ption" (... is called filler).
-# In a loop, set x from 5 to and to 15 and print out x and the abbreviated version 
-# there'll be an issue where the result would actually be longer(!) than the un-abbreviated s. 
+# In a loop, set x from 5 to and to 15 and print out x and the abbreviated version
+# there'll be an issue where the result would actually be longer(!) than the un-abbreviated s.
 # For these cases, do not perform your abbreviation, simply print out s. Note that this
 # should work for any other string a or filler as well, so don't hardcode things!
-# 
+#
 # Optional:
 # write a general function abbr(s, filler="...", total_width=15) which abbreviates s
 # to total_width chars and uses the string filler in between them. Again, make sure the
 # result would not be longer than s!
-# call your function a couple of times with different parameters and also test edge cases
-print("start of part 4") # set breakpoint here
-s = "A very long description" # a long string
+# call your function a couple of times with different parameters and also test edge cases'''
+print("start of part 4")
+s = "I hope to get through the lectures"  # a long string
 filler = "..."
-# your code here
+for x in range(5, 15):
+    # check if abbreviation would be longer than s
+    if x * 2 + len(filler) > len(s):
+        print(x, s)
+    else:
+        # slice off ends and glue together with filler chars
+        abb_str = s[0:x] + filler + s[-x:]
+        print(x, abb_str
+print("end of 4")
 
-
-print("end of 4") # set breakpoint here 
-'''
 
 
 
@@ -325,29 +248,30 @@ print("end of 4") # set breakpoint here
 
 
 # solution 4
-s = "A very long description" # a long string
-filler = "..."
+s="A very long description"  # a long string
+filler="..."
 for x in range(5, 15):
     # check if abbreviation would be longer than s
     if x * 2 + len(filler) > len(s):
         print(x, s)
     else:
-        abb_str = s[0:x] + filler + s[-x:] # slice off ends and glue together with filler chars
+        # slice off ends and glue together with filler chars
+        abb_str=s[0:x] + filler + s[-x:]
         print(x, abb_str)
 
 
 
 def abbr(s, filler="...", total_width=15):
-    "returns a copy of s abbreviated to total_width with filler in the middle" 
-    x = total_width // 2 # integer division
-    rem = total_width % 2 # remainder will be 1 if width is odd
-    abb_str = s[0:x+rem] + filler + s[-x:] # for odd width, add one to front
+    "returns a copy of s abbreviated to total_width with filler in the middle"
+    x=total_width // 2  # integer division
+    rem=total_width % 2  # remainder will be 1 if width is odd
+    abb_str=s[0:x+rem] + filler + s[-x:]  # for odd width, add one to front
     if len(abb_str) > len(s):
         return s
     return abb_str
 
 # Test
-s = "A very long description"
+s="A very long description"
 for tw in range(5, len(s)+1):
     print(tw, abbr(s, "...", tw))
 
