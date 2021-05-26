@@ -152,10 +152,12 @@ uppercase = -1
 for i in sentence_list:
     i = i.replace('.', '')  # will replace the period with an empty line
     i = i.replace(',', '')  # will replace the comma with an empty line
-    if uppercase == 1:
+    if uppercase == True:
         print(i.upper())
+        uppercase = False
     else:
         print(i)
+        uppercase = True
     uppercase = uppercase * -1
 print("end of 3")
 
@@ -207,15 +209,15 @@ for w in words:
 print("start of part 4")
 s = "I hope to get through the lectures"  # a long string
 filler = "..."
-for x in range(5, 15):
+for x in range(5,15):
     # check if abbreviation would be longer than s
-    if x * 2 + len(filler) > len(s):
-        print(x, s)
+    if x + len(filler) + x > len(s):
+        print(x,s) #if yes, print out the original string s
     else:
-        # slice off ends and glue together with filler chars
-        abb_str = s[0:x] + filler + s[-x:]
-        print(x, abb_str
-print("end of 4")
+       # slice off ends and glue together with filler chars
+        print(x,s[0:x]+filler+s[-x:])
+
+print("end of 4") # set breakpoint here 
 
 
 
