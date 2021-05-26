@@ -1,0 +1,72 @@
+# Isaac Macarthy
+# results.txt
+# May 26, 2020
+
+# part 0
+print("start of part 0")  # prints the indication of the start of the exercise
+name = input("What is your name?")  # asks the user for their name
+# concates the word Hello with line 28 which will combine Hello with the user's input name
+print("Hello " + name)
+print("end of 0")  # indicates the end of the exercise
+
+
+
+# part 1
+print("start of part 1")  # set breakpoint here
+L = [0, [], [1, 2, 3, 4], [[5], [6, 7]], [8, 9, 10]]
+print(L)
+# your code
+index0 = L[0]  # 0 start of index
+index1 = L[2][1]  # index
+index2 = L[2][2]
+index3 = [L[3][0][0], L[3][1][0]]  # [5, 6]
+index4 = L[4][0]
+index5 = L[4][-1]
+
+insertL = [index0, index1, index2, index3, index4, index5]
+print("New list is ", insertL)
+
+print("end of 1")
+
+# part 2
+print("start of part 2") # set breakpoint here
+s = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects."
+# your code here
+l = s.split(".")
+print("There are", len(l), "sentences in total.")
+for sen in l:
+    print(sen)
+print("end of 2") # set breakpoint here 
+
+
+
+# part 3
+print("start of part 3")
+s = "Python is an interpreted, high-level, general-purpose programming language."
+sentence_list = s.split()  # splits each word at the start of a space
+uppercase = -1
+for i in sentence_list:
+    i = i.replace('.', '')  # will replace the period with an empty line
+    i = i.replace(',', '')  # will replace the comma with an empty line
+    if uppercase == True:
+        print(i.upper())
+        uppercase = False
+    else:
+        print(i)
+        uppercase = True
+    uppercase = uppercase * -1
+print("end of 3")
+
+# part 4
+print("start of part 4")
+s = "I hope to get through the lectures"  # a long string
+filler = "..."
+for x in range(5,15):
+    # check if abbreviation would be longer than s
+    if x + len(filler) + x > len(s):
+        print(x,s) #if yes, print out the original string s
+    else:
+       # slice off ends and glue together with filler chars
+        print(x,s[0:x]+filler+s[-x:])
+
+print("end of 4") # set breakpoint here 
